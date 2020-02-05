@@ -5,9 +5,9 @@ function getResult(a,b,c){
     if ( discriminate = 0) {
         let result = [x1];
         x1 = ( (-b))/(2*a);
-        return result;
+        return result[x1];
     } else if (discriminate < 0) {
-        let result = []
+        let result = [];
         return result;
     } else if ( discriminate > 0) {
         let result = [x1, x2];
