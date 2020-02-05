@@ -3,8 +3,10 @@ function getResult(a,b,c){
     let discriminate; 
     discriminate = b**2 - 4*a*c;
     if ( discriminate == 0) {
-        let result = [x1];
+        // let result = [x1];
+        let result = [];
         x1 = ( (-b))/(2*a);
+        result.push(x1);
         return result;
     } else if (discriminate < 0) {
         let result = [];
@@ -14,7 +16,7 @@ function getResult(a,b,c){
         x1 = ( (-b) + Math.sqrt(d))/(2*a);
         x2 = ( (-b) - Math.sqrt(d))/(2*a);
         return result;
-    }
+    } 
     // код для задачи №1 писать здесь
     //return x;
 }
