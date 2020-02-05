@@ -17,14 +17,49 @@ function getResult(a,b,c){
         result.push(x1,x2);
         return result;
     } 
-    // код для задачи №1 писать здесь
-    //return x;
 }
-    // return x;
 
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
+    
+    // if (marks.length > 5) {
+    //     let sum = 0;
+    //     console.log("Превышено количество оценок");
+    //     marks.splice(5, marks.length);
+    //     for ( let i; i < marks.length; i++) {
+    //         sum =+ marks[i];
+    //     } 
+    //     let AverageMark = [];
+    //     let average = sum/marks.length;
+    //     AverageMark.push(average);
+    //     return AverageMark;
+    // } else if (marks.length <= 5) {
+    //     let sum = 0;
+    //     for ( let i; i < marks.length; i++) {
+    //         sum =+ marks[i];
+    //     } 
+    //     let average = sum/marks.length;
+    //     let AverageMark = [];
+    //     AverageMark.push(average);
+    //     return AverageMark; 
+    // }
+    function averageMark() {
+        let sum = 0;
+        for (let i; i < marks.length; i++) {
+            sum = sum + marks;
+        } let average = sum/marks.length;
+        marks.push(average);
+        return marks;
+    }
+
+    if (marks.length > 5) {
+        console.log('Превышено количество оценок');
+        marks.splice(5, marks.length);
+        console.log(marks);
+        averageMark();
+    } else if (marks.length <= 5) {
+        averageMark();
+    }
     // return averageMark;
 }
 
