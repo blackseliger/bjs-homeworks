@@ -2,7 +2,7 @@ function getResult(a,b,c){
     "use strict"
     let discriminate; 
     discriminate = b**2 - 4*a*c;
-    if ( discriminate = 0) {
+    if ( discriminate == 0) {
         let result = [x1];
         x1 = ( (-b))/(2*a);
         return result[x1];
