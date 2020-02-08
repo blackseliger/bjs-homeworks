@@ -16,11 +16,11 @@ function getSolutions(a, b, c) {
       return {
           D: D, roots: [x1,  x2]
       };
-  }   
-}  
+  }  
+}   
 
-function showSolutionsMessage(a, b, c) {
-    let result = getSolutions();
+    function showSolutionsMessage(a, b, c) {
+    let result = getSolutions(a, b, c);
     console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
     console.log(`Значение дискриминанта: ${D}`);
     if (D < 0) {
