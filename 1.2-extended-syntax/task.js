@@ -5,19 +5,16 @@ function getResult(a,b,c){
     discriminant = b**2 - 4*a*c;
     let result = [];
     if ( discriminant == 0) {
-        // let result = [];
         let x1 = ( (-b))/(2*a);
         result.push(x1);
-        // return result;
-    } else if (discriminant < 0) {
-        // let result = [];
-        // return result;
+    } else if (discriminant < 0) { 
+
     } else if ( discriminant > 0) {
-        // let result = [];
+        
         let x1 = ( (-b) + Math.sqrt(discriminant))/(2*a);
         let x2 = ( (-b) - Math.sqrt(discriminant))/(2*a);
         result.push(x1,x2);
-        // return result;
+        
     } 
     return result;
 }
@@ -42,7 +39,7 @@ function getAverageMark(marks){
 
 function askDrink(name,dateOfBirthday){
    let todaydate = new Date().getFullYear();
-   let ageVerification = todaydate - dateOfBirthday;
+   let ageVerification = todaydate - dateOfBirthday.getFullYear();
    if ( ageVerification >= 18) {
        console.log(`Не желаете ли олд-фэшн, ${name}?`);
    } else {
