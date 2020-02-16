@@ -36,21 +36,37 @@ function getSolutions(a, b, c) {
 
     // second task
 
-    function getAverageScore(data){
-        data = {
-            algebra: [3,2,4],
-            russian: [4,4,5]
+   function getAverageScore(data) {
+      function getAverageMark(marks) {
+          let sum = 0;
+          for ( let i = 0; i < marks.length; i++ ) {
+              sum += marks[i];
+          } return (marks.length > 0)? sum/marks.length: 0;
+      }; 
+        let result = new Object();
+        let resultArray = [];
+        for (let prop in data) {
+            result[prop] = getAverageMark(data[prop]);
+            resultArray.unshift(getAverageMark(data[prop]));
         }
-        let result = {
-            
+        result.average = getAverageMark(resultArray);
+        return result;
+   }
+    console.log(getAverageScore(
+        {
+            algebra:[2,4,5,2,3,4],
+            geometry:[2,4,5],
+            russian:[3,3,4,5],
+            physics:[5,5],
+            music:[2,2,6],
+            english:[4,4,3],
+            poetry:[5,3,4],
+            chemistry:[2],
+            french:[4,4]
         }
-    }
+        ));
 
-    function getAverageMark(marks) {
-        let sum = 0;
-        for ( let i; i < marks.length; i++) {
-            sum += marks[i];
-        } let averageOneSubject = sum/ marks.length;
-        return averageOneSubject; 
-    }
-  
+        //  Здравствуйте! Пожалуйста помогите понять что происходит с 48 строчки до 52. 
+        // Дело в том, что мне заняло несколько дней, чтоб понять что требуется в задании. В итоге так
+        //  и не смог разобраться. И подсмотрел чужой код. Не могу понять, как работает метод 
+        // обхода свойств. Простите что вышла такая ситуация.
