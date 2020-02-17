@@ -33,6 +33,4 @@ function getGreeting(name) {
     } 
 
 return (`Привет, мир! Меня зовут ${checkName(name)}`);
-    // код для задачи №2 писать здесь
-    // return greeting;
 }
