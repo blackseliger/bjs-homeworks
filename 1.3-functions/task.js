@@ -83,6 +83,9 @@ function getSolutions(a, b, c) {
             french:[4,4]
         }
         ));
+
+        
+        
         function getPersonData(secretData){
             function getDecodedValue(secret){
                 return secret == 1? 'Эмильо': 'Родриго';
