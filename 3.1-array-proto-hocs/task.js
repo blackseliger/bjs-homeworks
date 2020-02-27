@@ -13,11 +13,15 @@ function sleep(milliseconds) {
     }, 0);
   }
 
-  const compareArrays = function(arr1, arr2) {
-    return (
-      arr1.length === arr2.length &&
-      arr1.every(function(el, i) {
-        return el === arr2[i];
-      })
-    );
-  };
+ let compareArrays = function( arr1, arr2) {
+     return ( arr1.length === arr2.length && 
+        arr1.every === arr2.every )
+
+ } 
+
+ function memorize (fn , limit) {
+         
+    return limit = fn
+ }
+
+ const mSum = memorize(sum, 5);
