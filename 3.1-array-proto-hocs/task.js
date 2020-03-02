@@ -34,7 +34,7 @@ const compareArrays = function(arr1, arr2) {
       // results.push({arg: args, result: fn })
       if (results.find === undefined ) {
          
-         let calculation = fn.apply(null, args ); // как вызвать функцию? Это нормальный ход действий?
+         let calculation = fn.apply(null, args ); 
          console.log(`функция ${calculation} вызвана не из памяти.`)
          results.push({args: arg, result: calculation})
          if (result.length > limit) {
