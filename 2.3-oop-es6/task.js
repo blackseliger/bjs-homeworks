@@ -44,87 +44,99 @@ class Weapon {
     }
         
 }
+// созданное оружие
+
+let arm = new Weapon(`Рука`, 1, Infinity, 1);
+let bow = new Weapon(`Лук`, 10, 200, 3);
+let sword = new Weapon(`Меч`, 25, 500, 1);
+let knife = new Weapon(`Нож`, 5, 300, 1);
+let stick = new Weapon(`Посох`, 8, 300, 2);
+// усиленное оружие 
+
+let longBow = new Weapon(`Длинный лук`, 15, `-`, 4);
+longBow.durability = bow.durability;  // добавили свойство. как в версии лука
+let axe = new Weapon(`Секира`, 27, `-`, 800);
+axe.range = sword.range;
+let stickStorm = new Weapon(`Посох`, 10, `-`, 3);
+stickStorm.durability = stick.durability;
+
 
 // экземляры
 
-class Arm extends Weapon {
-    constructor(){
-        super('Рука', 1, Infinity, 1);
-    }
-}
+// class Arm extends Weapon {
+//     constructor(){
+//         super('Рука', 1, Infinity, 1);
+//     }
+// }
 
 
-// // подкласс Arm
-// class SubclassArm extends Arm {
-// } пока не обращай внимание
+// class Bow extends Weapon {
+//     constructor() {
+//         super('Лук', 10, 200, 3);
+//     }
+// }
 
-class Bow extends Weapon {
-    constructor() {
-        super('Лук', 10, 200, 3);
-    }
-}
+// class Sword extends Weapon {
+//     constructor(){
+//     super('Меч', 25, 500, 1);
+//     }
+// }
 
-class Sword extends Weapon {
-    constructor(){
-    super('Меч', 25, 500, 1);
-    }
-}
+// class Knife extends Weapon {
+//     constructor(){
+//         super('Нож', 5, 300, 1);
+//     }
+// }
 
-class Knife extends Weapon {
-    constructor(){
-        super('Нож', 5, 300, 1);
-    }
-}
+// class Stick extends Weapon {
+//     constructor(){
+//         super('Посох', 8, 300, 2);
+//     }
+// }
 
-class Stick extends Weapon {
-    constructor(){
-        super('Посох', 8, 300, 2);
-    }
-}
+// class LongBow extends Bow {
+//     constructor(){
+//         super();
+//         this.name = `Длинный лук`;
+//         this.attack = 15;
+//         this.range = 4;
+//     }
+// }
 
-class LongBow extends Bow {
-    constructor(){
-        super();
-        this.name = `Длинный лук`;
-        this.attack = 15;
-        this.range = 4;
-    }
-}
+// class Axe extends Sword {
+//     constructor(){
+//         super();
+//         this.name = `Секира`;
+//         this.attack = 27;
+//         this.durability = 800;
+//     }
+// }
 
-class Axe extends Sword {
-    constructor(){
-        super();
-        this.name = `Секира`;
-        this.attack = 27;
-        this.durability = 800;
-    }
-}
+// class StickStorm extends Stick {
+//     constructor(){
+//         super();
+//         this.name = `Посох Бури`;
+//         this.attack = 10;
+//         this.range = 3;
+//     }
+// }
 
-class StickStorm extends Stick {
-    constructor(){
-        super();
-        this.name = `Посох Бури`;
-        this.attack = 10;
-        this.range = 3;
-    }
-}
+// let arm = new Arm();
+// let bow = new Bow();
+// let sword = new Sword();
+// let knige = new Knife();
+// let stick = new Stick();
+// let longBow = new LongBow();
+// let axe = new Axe();
 
-let arm = new Arm();
-let bow = new Bow();
-let sword = new Sword();
-let knige = new Knife();
-let stick = new Stick();
-let longBow = new LongBow();
-let axe = new Axe();
+// sword.takeDamage(5);
+// console.log(sword.durability); 
 
-sword.takeDamage(5);
-console.log(sword.durability); 
+// sword.takeDamage(50);
+// console.log(sword.durability); 
 
-sword.takeDamage(50);
-console.log(sword.durability); 
-
-arm.takeDamage(20);
-console.log(arm.durability);
+// arm.takeDamage(20);
+// console.log(arm.durability);
 
 // third task
 
