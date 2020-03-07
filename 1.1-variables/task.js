@@ -1,17 +1,22 @@
 function averageMark(a, g, p) {
-    // реализуйте здесь задание №1
-    // раскомментируйте следующую строку и верните результат (строку выше и эту удалите)
-    // return 0;
+    let algebra = a;
+    let geograpy = g;
+    let physics = p;
+
+    return (a + g + p)/3
 }
 
 function sayHello(userName) {
-    // реализуйте здесь задание №2
-    // раскомментируйте следующую строку и верните результат (строку выше и эту удалите)
-    // return "Привет";
+    let myName = userName;
+    let message = `Привет, мир! Меня зовут ${myName}`
+    return message;
 }
 
 function calculateFormula() {
-    // реализуйте здесь задание №3
-    // раскомментируйте следующую строку и верните результат (строку выше и эту удалите)
-    // return 0;
+    let x = 2;
+    let y = 22;
+    let z = 0;
+
+    let result = x * y + 5 * z + x - 1;
+    return result;
 }

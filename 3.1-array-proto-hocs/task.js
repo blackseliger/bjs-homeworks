@@ -31,14 +31,20 @@ const compareArrays = function(arr1, arr2) {
  function memorize (fn , limit) {
    let results = [];
    let i = 0;  // для замыкания 
+
     return function(){
       let arg = Array.from(arguments);  // массив аргументов возвращаемой функции
       let findObj = results.find(x => compareArrays(x.arg, args)); // x это обозначение свойства массива
+      debugger;
+      console.log(x.arg);
+      console.log (findObj);
       console.log(`Было сделано ${i++} вызовов `)
       let calculation;
+
       if (results.find !== undefined ) {  // добавил ! по рекоммендации преподавателя 
          let calculation = findObj.result;
          console.log(`функция ${calculation} вызвана из памяти`)
+
          // let calculation = fn.apply(null, args ); 
          // console.log(`функция ${calculation} вызвана не из памяти.`)
          // results.push({args: arg, result: calculation})
@@ -48,8 +54,9 @@ const compareArrays = function(arr1, arr2) {
       } else {
            let  calculation = fn.apply(null, args);
             console.log(`функция ${calculation} вызвана не из памяти`);
+
             results.push({args: arg, result: calculation})
-            if (results.length > limit){
+            if (results.length > limit) {
                results.shift();
             }
          // let calculation = findObj.result;
