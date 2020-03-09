@@ -33,34 +33,31 @@ const compareArrays = function(arr1, arr2) {
    let i = 0;  // для замыкания 
 
     return function(){
-      let arg = Array.from(arguments);  // массив аргументов возвращаемой функции
+      let args = Array.from(arguments);  // массив аргументов возвращаемой функции
       let findObj = results.find(x => compareArrays(x.arg, args)); // x это обозначение свойства массива
-      debugger;
-      console.log(x.arg);
-      console.log (findObj);
       console.log(`Было сделано ${i++} вызовов `)
       let calculation;
 
-      if (results.find !== undefined ) {  // добавил ! по рекоммендации преподавателя 
-         let calculation = findObj.result;
-         console.log(`функция ${calculation} вызвана из памяти`)
-
-         // let calculation = fn.apply(null, args ); 
-         // console.log(`функция ${calculation} вызвана не из памяти.`)
-         // results.push({args: arg, result: calculation})
-         // if (result.length > limit) {
-         //    result.shift();
-         // }
-      } else {
-           let  calculation = fn.apply(null, args);
-            console.log(`функция ${calculation} вызвана не из памяти`);
-
-            results.push({args: arg, result: calculation})
-            if (results.length > limit) {
-               results.shift();
-            }
-         // let calculation = findObj.result;
+      if (findObj === undefined) {  //
+         // calculation = findObj.result;
          // console.log(`функция ${calculation} вызвана из памяти`)
+
+         calculation = fn.apply(null, args ); 
+         console.log(`функция ${calculation} вызвана не из памяти.`)
+         results.push({arg: args, result: calculation})
+         if (results.length > limit) {
+            results.shift();
+         }
+      } else {
+         //   calculation = fn.apply(null, args);
+         //    console.log(`функция ${calculation} вызвана не из памяти`);
+
+         //    results.push({args: arg, result: calculation})
+         //    if (results.length > limit) {
+         //       results.shift();
+         //    }
+         calculation = findObj.result;
+         console.log(`функция ${calculation} вызвана из памяти`)
       }
       return calculation;
     }
@@ -73,15 +70,16 @@ const compareArrays = function(arr1, arr2) {
 
    console.time(timer);
    for ( let i = 0; i < 100; i++){
-      let calledFunc = testFunction.apply(null, arguments);
+      testFunction(...arrays);
       arrays.forEach(element => 
-         element * arguments
-      ); 
+         element * arrays
+      );   
          };
    console.timeEnd(timer)
    }
  
    // testCase(sum, 100) // какой таймер ставить?
-   // testCase(sum, "sum");
+   testCase(sum, `sum`);
+   testCase(memorize, `memorize`);
 
 
