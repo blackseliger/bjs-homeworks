@@ -65,14 +65,11 @@ class AlarmClock {
     
 
     printAlarms(){
-        let printAlarms = [];
-        printAlarms.push(this.alarmCollection.id)
-        printAlarms.push(this.alarmCollection.time)
-        return() => {
-            printAlarms.forEach(item => console.log(item));
-        }
-    } // не уверен по поводу работы этой все функции. Посмотрите, пожалуйста. Так как forEach затрагивает все элементы, а по условию нужны только элементы id, time
-    //  больше мне ничего в голову не пришло, как создать новый массив и туда занести элементы
+        // let printAlarms = [];
+        // printAlarms.push(this.alarmCollection.id)
+        // printAlarms.push(this.alarmCollection.time)
+        return this.alarmCollection.forEach(item => console.log(item));
+    } 
 
     clearAlarms(){
         stop();
