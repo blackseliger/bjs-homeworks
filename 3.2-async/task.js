@@ -14,39 +14,34 @@ class AlarmClock {
             console.error(`будильник с таким индификатором уже существует`);
             return;
         }
-        // let timer = new Date(time);  // так переводят в формат времени?
-    //    let setAlarm = setTimeout(() => {
-    //        callback();
-    //    }, time);    // timer и setAlarm тут не нужен. Убрал после первой проверки преподавателя
-       
        let clock = {time, callback, id}
        this.alarmCollection.push(clock);
-    //    return setAlarm(); не нужен
     }
 
     removeClock(id) {
         let alarmCollectionBefore = this.alarmCollection;
-        let alarmCollectionAfter =  this.alarmCollection.filter( alarm => alarm[id] !== id );
-        return() => { if (alarmCollectionBefore === alarmCollectionAfter) {
+        this.alarmCollection =  this.alarmCollection.filter( alarm => alarm[id] !== id );
+        return() => { if (alarmCollectionBefore === this.alarmCollection) {
             return false; 
              } 
              return true;
          }
-     } // правильно понял, смысл сохранения о котором Вы говорили тут?
+     } 
     
 
 
     getCurrentFormattedTime() {
-        let date = new Date();
-            let hour = date.getHours() - (date.getHours() >= 12 ? 12 : 0);
-            // let period = date.getHours() >= 12 ? 'PM' : 'AM';
-            let CurrentDate = hour + 3 + ":" + date.getMinutes;
-            return CurrentDate;
+        const date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let currentDate = `${hours}:${minutes}`
+        return currentDate;
+        
     }
 
     start() { 
         let checkClock = function(clock) {
-            if (CurrentDate === clock.time) {
+            if (currentDate === clock.time) {
                 clock.callback();
             }
         }
@@ -55,19 +50,19 @@ class AlarmClock {
                 this.alarmCollection
                     .map = (number) => {
                         clock.id =  checkClock(number);
+                        this.timerId.unshift(clock.id);
                     } 
-               }) 
+               }) // тут разве не должен указываться промежуток вызова функции? После }
             }
     }
 
     stop(){
         if (clock.id) {
-            let clearInterval = () => {
-// как удалить интервал?...
-                clock.id = null;   // сделать индификатор снова без значени с помощью null. Так можно делать?
+            clearInterval(clock.id);
+            this.timerId.shift();
             }
         }
-    }
+    
 
     printAlarms(){
         let printAlarms = [];
@@ -80,7 +75,7 @@ class AlarmClock {
     //  больше мне ничего в голову не пришло, как создать новый массив и туда занести элементы
 
     clearAlarms(){
-        clearTimeout() // что вписать в качестве аргумента?..
+        stop();
         this.alarmCollection.splice(0, this.alarmCollection.length);
     }
 
@@ -89,3 +84,4 @@ class AlarmClock {
 }
 
 let phoneAlarm = new AlarmClock();
+
