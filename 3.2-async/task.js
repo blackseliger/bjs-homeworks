@@ -65,9 +65,6 @@ class AlarmClock {
     
 
     printAlarms(){
-        // let printAlarms = [];
-        // printAlarms.push(this.alarmCollection.id)
-        // printAlarms.push(this.alarmCollection.time)
         return this.alarmCollection.forEach(item => console.log(item));
     } 
 
