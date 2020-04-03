@@ -45,7 +45,7 @@ class AlarmClock {
                 clock.callback();
             }
         }
-            if (clock.id === undefined) {
+            if (this.alarmCollection.clock.id === undefined) {
                setInterval(() => {
                 this.alarmCollection
                     .map = (number) => {
@@ -78,4 +78,25 @@ class AlarmClock {
 }
 
 let phoneAlarm = new AlarmClock();
+phoneAlarm.addClock("21:00", () => console.log("Скоро спать"), 1)
+
+phoneAlarm.addClock("21:01", () => { console.log("Пора готовиться ко сну!"), phoneAlarm.removeClock(2)}, 2);
+
+phoneAlarm.addClock("21:01", () => console.log("Иди умываться!"));
+
+phoneAlarm.addClock("21:02", () => {
+    console.log("Иди спать, завтра рано на работу!");
+    phoneAlarm.clearAlarms();
+    phoneAlarm.printAlarms();
+}, 3);
+
+
+phoneAlarm.addClock("21:05", () => console.log("Иди спать, завтра рано на работу!"), 1);
+
+
+phoneAlarm.printAlarms()
+
+
+// phoneAlarm.start();  // жалуется на 48 строчку, не могу выяснить решение 
+
 
